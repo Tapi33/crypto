@@ -13,7 +13,7 @@ const AuthorizationForm = () => {
     dispatch(
       fetchUserLogin({
         username: event.target[0].value,
-        password: event.target[0].value,
+        password: event.target[1].value,
       }),
     );
   };

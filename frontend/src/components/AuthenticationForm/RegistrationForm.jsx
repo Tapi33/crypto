@@ -14,10 +14,8 @@ const RegistrationForm = () => {
       fetchUserReg({
         username: event.target[0].value,
         email: event.target[1].value,
-        first_name: event.target[2].value,
-        last_name: event.target[3].value,
-        password: event.target[4].value,
-        re_password: event.target[5].value,
+        password: event.target[2].value,
+        re_password: event.target[3].value,
       }),
     );
   };
