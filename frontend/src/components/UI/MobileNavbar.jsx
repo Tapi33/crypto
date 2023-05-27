@@ -28,7 +28,7 @@ const MobileNavbar = () => {
           <InfoSVG />
           About
         </NavLink>
-        <a href="https://github.com/hushdev/Crypto-Rates" target="_blank" rel="noreferrer">
+        <a href="https://github.com/tapi33/crypto" target="_blank" rel="noreferrer">
           <GithubSVG />
           GitHub
         </a>
