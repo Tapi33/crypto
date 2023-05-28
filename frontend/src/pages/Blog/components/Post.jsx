@@ -26,7 +26,7 @@ const Post = ({ post }) => {
         <p dangerouslySetInnerHTML={{ __html: body }}></p>
         <div className="footer">
           <a href={post?.guid} target="_blank" rel="noreferrer">
-            {post?.guid && "Read More"}
+            {post?.guid && "Читать дальше.."}
           </a>
         </div>
       </Card>

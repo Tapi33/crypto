@@ -4,16 +4,12 @@ import AuthorizationForm from '../../components/AuthenticationForm/Authorization
 
 const Authorization = () => {
   return (
-    <section className="note">
-      <div className="container">
-        <div className={styles.root}>
+      <div className={styles.container}>
           <div className={styles.root__container}>
             <h3 className={styles.title}>Авторизация</h3>
             <AuthorizationForm />
           </div>
         </div>
-      </div>
-    </section>
   );
 };
 

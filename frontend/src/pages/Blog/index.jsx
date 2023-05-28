@@ -8,6 +8,7 @@ import Loader from "../../components/UI/Loader";
 
 const BlogPage = () => {
   const { status, data, error } = useQuery("news", getNews);
+  console.log(data);
   
   return (
     <div>

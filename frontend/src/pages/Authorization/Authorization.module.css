@@ -1,11 +1,13 @@
-.root {
+.container {
+  height: 80vh;;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .title {
+  color: #fefefe;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 32px;
   margin-bottom: 30px;
 }
 .root__container {

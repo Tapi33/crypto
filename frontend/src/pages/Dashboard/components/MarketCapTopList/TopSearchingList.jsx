@@ -17,7 +17,7 @@ const TopSearchingList = () => {
     <StyledTopSearchingList>
       {error && <ErrorMessage>{error.message}</ErrorMessage>}
       <Title size={2} className="info-title">
-        🔝 TOP searching list <span>{data ? "24 hours" : "The list is unavailable"}</span>
+        🔝 Популярные монеты <span>{data ? "24 часа" : "Лист пуст"}</span>
       </Title>
       <Row flexWrap="wrap" overflowX="auto" padding="0 0 20px 0">
         {data?.coins.map((coin, i) => (

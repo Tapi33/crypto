@@ -22,11 +22,11 @@ const AuthorizationForm = () => {
     <form onSubmit={handleSubmit}>
       <p className={styles.error}>{error}</p>
       <div className={styles.input__container}>
-        <label>Имя пользователя</label>
+        <label className={styles.input__title}>Имя пользователя</label>
         <input type="text" name="username" placeholder="Имя пользователя" required />
       </div>
       <div className={styles.input__container}>
-        <label>Пароль</label>
+        <label className={styles.input__title}>Пароль</label>
         <input type="password" name="password" placeholder="Пароль" required />
       </div>
       <input className={styles.button} type="submit" value="Войти" />

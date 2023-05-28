@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import convertNumber from "../../../utils/convert-number";
 
@@ -6,6 +6,7 @@ import Card from "../../../components/UI/Card";
 import Chip from "../../../components/UI/Chip";
 import SaveBtn from "../../../components/UI/SaveBtn";
 import Title from "../../../components/UI/Title";
+import { translateInfo } from "../../../api/queries";
 
 const Overview = ({ coin }) => {
   const currentPrice = `$${convertNumber(coin.market_data.current_price.usd)}`;
@@ -15,6 +16,13 @@ const Overview = ({ coin }) => {
   const ath = `$${convertNumber(coin.market_data.ath.usd)}`;
   const atl = `$${convertNumber(coin.market_data.atl.usd)}`;
   const totalVolume = `$${convertNumber(coin.market_data.total_volume.usd)}`;
+
+  const [infoCoin, setInfoCoin] = useState();
+
+  useEffect(()=>{
+      translateInfo(coin.description.en).then(res => setInfoCoin(res[0]))
+  },[])
+
 
   return (
     <StyledOverview>
@@ -28,9 +36,9 @@ const Overview = ({ coin }) => {
         <span className={priceChangeClass}>{priceChange.toFixed(2)}% (7 days)</span>
       </Title>
       <div className="info">
-        {coin.description.en && (
+        {infoCoin && (
           <Card className="card">
-            <p dangerouslySetInnerHTML={{ __html: coin.description.en }}></p>
+            <p>{infoCoin}</p>
           </Card>
         )}
 

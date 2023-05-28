@@ -9,8 +9,8 @@ label {
 input {
   background-color: #fefefe;
   border: 1px solid #c4c4c4;
-  border-radius: 4px;
   outline: none;
+  border-radius: 2px;
   padding: 15px 10px;
   color: #363636;
 }
@@ -36,4 +36,8 @@ input::placeholder {
   color: red;
   font-weight: 700;
   margin-bottom: 10px;
+}
+
+.input__title{
+  color: #fefefe;
 }

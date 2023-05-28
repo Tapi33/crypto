@@ -12,13 +12,13 @@ const CoinsList = ({ list, ...props }) => {
         <Card transparent>
           <StyledCoinsList>
             <li className="heading">
-              <span className="image">Coin</span>
-              <span className="symbol">Name</span>
+              <span className="image">Актив</span>
+              <span className="symbol">Название</span>
               <span className="code"></span>
-              <span>Price</span>
+              <span>Стоимость</span>
               <span className="ath">ATH</span>
-              <span className="market_cap">Mkt Cap</span>
-              <span>7 Days</span>
+              <span className="market_cap">Капитализация</span>
+              <span>7 дней</span>
             </li>
 
             {list.map((coin, i) => (
@@ -27,7 +27,7 @@ const CoinsList = ({ list, ...props }) => {
           </StyledCoinsList>
         </Card>
       )}
-      {list.length === 0 && <ErrorMessage>Nothing found</ErrorMessage>}
+      {list.length === 0 && <ErrorMessage>Не найдено</ErrorMessage>}
     </>
   );
 };

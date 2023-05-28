@@ -6,11 +6,13 @@ import { selectUser, clearIsRedirect } from '../../redux/slices/userSlice';
 import { useAppDispatch } from '../../redux/store';
 import { useSelector } from 'react-redux';
 import { setMessage } from '../../redux/slices/messageSlice';
+import axios from 'axios';
 
-const Registration = () => {
+const Registration = ()  => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const userInfo = useSelector(selectUser);
+
 
   React.useEffect(() => {
     if (userInfo.is_redirect.status) {
@@ -25,16 +27,17 @@ const Registration = () => {
 
       return navigate('/sign-in');
     }
+    
   }, [userInfo]);
+  
+  
 
   return (
-      <div className="container">
-        <div className={styles.root}>
+      <div className={styles.container}>
           <div className={styles.root__container}>
             <h3 className={styles.title}>Регистрация</h3>
             <RegistrationForm />
           </div>
-        </div>
       </div>
   );
 };
