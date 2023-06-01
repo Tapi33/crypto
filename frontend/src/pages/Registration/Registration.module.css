@@ -1,0 +1,15 @@
+.container {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  color: #fefe;
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+.root__container {
+  width: 380px;
+}

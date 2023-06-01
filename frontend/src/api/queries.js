@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const coingeckoUrl = "https://api.coingecko.com/api/v3";
 const cryptocompareUrl = "https://min-api.cryptocompare.com/data/v2";
 
@@ -49,4 +51,27 @@ const searchCoins = async (query) => {
   return response.json();
 }
 
-export { getRates, getExactCoins, getCoinInfo, getCoinGraph, getNews, getTopSevenCoins, searchCoins };
+const translateInfo = async (text) =>{
+  const options = {
+    method: 'POST',
+    url: 'https://rapid-translate-multi-traduction.p.rapidapi.com/t',
+    headers: {
+      'content-type': 'application/json',
+      'X-RapidAPI-Key': '73996fbeb0msh48b9e29ce639da4p182b66jsn3622110433fa',
+      'X-RapidAPI-Host': 'rapid-translate-multi-traduction.p.rapidapi.com'
+    },
+    data: {
+      from: 'en',
+      to: 'ru',
+      q: `${text}`
+    }
+  };
+  try {
+    const response = await axios.request(options);
+    return response.data
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export { getRates, getExactCoins, getCoinInfo, getCoinGraph, getNews, getTopSevenCoins, searchCoins, translateInfo };

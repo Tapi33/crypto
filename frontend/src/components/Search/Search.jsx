@@ -31,7 +31,7 @@ const Search = ({ className }) => {
     <StyledSearch className={className}>
       {isFetching && <Loader className="search-loader" />}
       <Input
-        placeholder="Search coins (min 3 symbols)"
+        placeholder="Поиск актива (мин 3 символа)"
         type="text"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}

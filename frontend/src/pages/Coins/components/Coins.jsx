@@ -9,7 +9,7 @@ const Coins = ({ list, fetchPrev, fetchNext, page, isFetching }) => {
   return (
     <StyledCoins>
       <Title size={2} className="title">
-        💰 Coins list
+        💰 Список активов
         <CoinsPagination fetchPrev={fetchPrev} fetchNext={fetchNext} page={page} isFetching={isFetching}/>
       </Title>
       <CoinsList list={list} />

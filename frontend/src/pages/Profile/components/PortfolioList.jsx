@@ -1,36 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
 
 import Card from "../../../components/UI/Card";
-import ErrorMessage from "../../../components/UI/ErrorMessage";
-import CoinListItem from "./CoinListItem";
+import ErrorMessage from '../../../components/UI/ErrorMessage';
+import PortfolioListItem from './PortfolioListItem';
 
-const CoinsList = ({ list, ...props }) => {
-  return (
-    <>
+function PortfolioList({list}) {
+  
+    return (
+        <>
       {list.length > 0 && (
         <Card transparent>
           <StyledCoinsList>
             <li className="heading">
-              <span className="image">Актив</span>
               <span className="symbol">Название</span>
-              <span className="code"></span>
+              <span>Кол-во</span>
+              <span className="ath">Цена покупки</span>
+              <span className="market_cap">Актуальная цена</span>
               <span>Стоимость</span>
-              <span className="ath">ATH</span>
-              <span className="market_cap">Капитализация</span>
-              <span>7 дней</span>
+              <span>Профит</span>
             </li>
-
             {list.map((coin, i) => (
-              <CoinListItem coin={coin} key={i} />
+              <PortfolioListItem coin={coin} key={i} />
             ))}
           </StyledCoinsList>
         </Card>
       )}
       {list.length === 0 && <ErrorMessage>Не найдено</ErrorMessage>}
     </>
-  );
-};
+    );
+}
 
 const StyledCoinsList = styled.ul`
   min-width: 380px;
@@ -63,4 +62,4 @@ const StyledCoinsList = styled.ul`
   }
 `;
 
-export default CoinsList;
+export default PortfolioList;

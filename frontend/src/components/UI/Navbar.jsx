@@ -15,25 +15,17 @@ const Navbar = () => {
         <Row justifyContent="space-between" alignItems="center">
           <NavLink to="/" className="logo">
             <LogoSVG />
-            <div>CryptoRates</div>
+            <div>Кириптоактивы</div>
           </NavLink>
           <ul>
             <Search className="search-bar" />
-            <NavLink to="/">Coins</NavLink>
-            <NavLink to="/dashboard">Dashboard</NavLink>
-            <NavLink to="/blog">Blog</NavLink>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/">Активы</NavLink>
+            <NavLink to="/dashboard">Сохраненные</NavLink>
+            <NavLink to="/blog">Новости</NavLink>
+            <NavLink to="/profile">Tapi33</NavLink>
+            <NavLink to="/sign-in">Войти</NavLink>
+            <NavLink to="/sign-up">Зарегистрироваться</NavLink>
             <ThemeToggler className="nav-theme-toggler" />
-            <Button className="github-btn">
-              <a
-                className="github"
-                href="https://github.com/tapi33"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub
-              </a>
-            </Button>
           </ul>
         </Row>
       </Container>

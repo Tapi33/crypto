@@ -36,7 +36,7 @@ const SavedCoins = () => {
       {isLoading && <Loader center />}
       {error && <ErrorMessage>{error.message}</ErrorMessage>}
       <Title size={2} className="info-title">
-        ❤️ Saved coins <span>{coinsList ? "7 days" : "No saved coins"}</span>
+        ❤️ Сохраненые активы<span>{coinsList ? "7 Дней" : "Нету сохраненых"}</span>
       </Title>
       {data && (
         <Row flexWrap="wrap" justifyContent="flex-start">
