@@ -8,20 +8,17 @@ import { getCoinInfo } from "../../../api/queries";
 import convertNumber from "../../../utils/convert-number";
 
 const PortfolioListItem = ({ coin }) => {
-  const { status, data, error } = useQuery("coinInfo", () => getCoinInfo(coin.name),{keepPreviousData: true, staleTime: 1000 * 60 * 5});
-  const currentPrice = data && data.market_data.current_price.usd;
   
-
    return (
     <StyledCoinListItem>
       <span className="name">
-        <NavLink to={`/graph/${coin.name}`}>{coin.name}</NavLink>
+        <NavLink to={`/graph/${coin.id_crypto}`}>{coin.id_crypto}</NavLink>
       </span>
-      <span>{convertNumber(coin.count)}</span>
-      <span>$ {convertNumber(coin.price_buy)}</span>
-      <span>$ {convertNumber(currentPrice)}</span>
-      <span>$ {convertNumber(coin.count*currentPrice)}</span>
-      <span>$ {convertNumber(coin.count*currentPrice - coin.count*coin.price_buy)}</span>
+      <span>{convertNumber(coin.quantity)}</span>
+      <span>$ {convertNumber(coin.price)}</span>
+      <span>$ {convertNumber(coin.current_price)}</span>
+      <span>$ {convertNumber(coin.quantity*coin.current_price)}</span>
+      <span>$ {convertNumber((coin.quantity*coin.current_price - coin.quantity*coin.price).toFixed(6))}</span>
     </StyledCoinListItem>
   );
 };

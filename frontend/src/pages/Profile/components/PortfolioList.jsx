@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
 
 import Card from "../../../components/UI/Card";
@@ -6,6 +6,7 @@ import ErrorMessage from '../../../components/UI/ErrorMessage';
 import PortfolioListItem from './PortfolioListItem';
 
 function PortfolioList({list}) {
+  
     return (
         <>
       {list.length > 0 && (

@@ -2,26 +2,25 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { ReactComponent as StarSVG } from "../../assets/svg/like.svg";
 
+import axios from "axios";
+
 const AddPortfolio = ({ onClick, coin, current_price, className, showLabel }) => {
 
-    const [portfolioCoin, setPortfolioCoin] = useState([])
 
   const saveCoinHandler = (e) => {
 
-    setPortfolioCoin(prev=> [...prev, {
-        name:coin,
-        current_price,
-        count: +prompt("кол-во",0)
-    }])
+    const article = { 
+      "id_crypto":coin,
+      "price":current_price,
+      "quantity": +prompt("кол-во",0)
+    } ;
+    const headers = {
+      'Authorization': `Token ${localStorage.getItem('auth_token')}`,
+  };
+    axios.post('http://127.0.0.1:8000/api/v1/portfolio/', article, {headers})
 
-    console.log(portfolioCoin);
+    
 
-    let saveCoinsArr = localStorage.getItem("portfolioCoins")
-      ? JSON.parse(localStorage.getItem("portfolioCoins"))
-      : []; 
-
-    saveCoinsArr.push(coin);
-    localStorage.setItem("portfolioCoins", JSON.stringify(saveCoinsArr));
   };
   return (
     <StyledSaveBtn showLabel={showLabel} onClick={saveCoinHandler} className={className}>
