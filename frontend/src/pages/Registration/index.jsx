@@ -6,7 +6,6 @@ import { selectUser, clearIsRedirect } from '../../redux/slices/userSlice';
 import { useAppDispatch } from '../../redux/store';
 import { useSelector } from 'react-redux';
 import { setMessage } from '../../redux/slices/messageSlice';
-import axios from 'axios';
 
 const Registration = ()  => {
   const navigate = useNavigate();

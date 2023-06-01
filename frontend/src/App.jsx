@@ -15,6 +15,7 @@ import Registration from './pages/Registration';
 import Container from "./components/UI/Container";
 import Navbar from "./components/UI/Navbar";
 import MobileNavbar from "./components/UI/MobileNavbar";
+import Profile from "./pages/Profile";
 
 const App = () => {
   const location = useLocation();
@@ -35,6 +36,7 @@ const App = () => {
                 <Route path="/dashboard" element={<DashboardPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/blog" element={<BlogPage />} />
+                <Route path="/profile" element={<Profile />} />
                 <Route path="/sign-in" element={<Authorization />} />
                 <Route path="/sign-up" element={<Registration />} />
               </Routes>
