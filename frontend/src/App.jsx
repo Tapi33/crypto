@@ -31,7 +31,7 @@ const App = () => {
           <TransitionGroup component={"div"}>
             <CSSTransition key={location.key} classNames="fade" timeout={300}>
               <Routes>
-                <Route path="/" element={<CoinsView baseUrl={baseUrl} />} />
+                <Route path="/" element={<CoinsView />} />
                 <Route path="/graph/:id" element={<GraphPage />} />
                 <Route path="/dashboard" element={<DashboardPage />} />
                 <Route path="/about" element={<AboutPage />} />
