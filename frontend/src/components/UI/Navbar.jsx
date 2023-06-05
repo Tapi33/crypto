@@ -22,7 +22,7 @@ const Navbar = () => {
             <NavLink to="/">Активы</NavLink>
             <NavLink to="/dashboard">Сохраненные</NavLink>
             <NavLink to="/blog">Новости</NavLink>
-            <NavLink to="/profile">Tapi33</NavLink>
+            {/* <NavLink to="/profile">Tapi33</NavLink> */}
             <NavLink to="/sign-in">Войти</NavLink>
             <NavLink to="/sign-up">Зарегистрироваться</NavLink>
             <ThemeToggler className="nav-theme-toggler" />

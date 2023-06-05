@@ -20,9 +20,9 @@ const Overview = ({ coin }) => {
 
   const [infoCoin, setInfoCoin] = useState();
 
-  // useEffect(()=>{
-  //     translateInfo(coin.description.en).then(res => setInfoCoin(res[0]))
-  // },[])
+  useEffect(()=>{
+      translateInfo(coin.description.en).then(res => setInfoCoin(res[0]))
+  },[])
 
 
   return (
@@ -38,11 +38,11 @@ const Overview = ({ coin }) => {
         <span className={priceChangeClass}>{priceChange.toFixed(2)}% (7 days)</span>
       </Title>
       <div className="info">
-        {/* {infoCoin && (
+        {infoCoin && (
           <Card className="card">
             <p>{infoCoin}</p>
           </Card>
-        )} */}
+        )}
 
         <div className="chips">
           {/* Quick information */}
